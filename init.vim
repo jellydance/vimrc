@@ -58,5 +58,3 @@ nnoremap j gj
 nnoremap k gk
 
 " Settings
-let g:python_host_prog = '/usr/bin/python2.7'
-let g:python3_host_prog = '/opt/rh/rh-python36/root/usr/bin/python'
