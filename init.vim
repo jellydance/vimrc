@@ -53,6 +53,8 @@ set cursorline
 set hidden
 set nowrap
 
+set mouse=a " mouse support
+
 " move vertically by visual line
 nnoremap j gj
 nnoremap k gk
