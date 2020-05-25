@@ -1,43 +1,60 @@
-" Specify a directory for plugins
-call plug#begin('~/.vim/plugged')
-Plug 'frazrepo/vim-rainbow'
-Plug 'preservim/nerdtree'
-Plug 'junegunn/fzf', { 'do': './install --bin' }
+" Editor Settings
+" Plugins
+call plug#begin('~/.local/share/nvim/plugged')
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'mileszs/ack.vim'
-Plug 'psf/black'
-Plug 'joshdick/onedark.vim'
+Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'vim-airline/vim-airline'
-" Initialize plugin system
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
+Plug 'davidhalter/jedi'
+Plug 'deoplete-plugins/deoplete-jedi'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+Plug 'rhysd/vim-clang-format'
+Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' }
+Plug 'joshdick/onedark.vim'
+Plug 'frazrepo/vim-rainbow'
 call plug#end()
 
-map <C-b> :NERDTreeToggle<CR>
-nmap <C-f> :Ag<space>
+" NERDTree
+nmap <C-B> :NERDTreeToggle<CR>
 
-" fzf setting
+" FZF
 map <C-p> :Files<CR>
 let g:fzf_preview_window = 'right:60%'
 
-if executable('ag')
-    let g:ackprg = 'ag --vimgrep'
-endif
+" Ack.Vim
+nmap <C-f> :Ag<space>
 
+" Deoplete
+let g:deoplete#enable_at_startup = 1
+
+" Language Server Protocol
+map <F12> :call LanguageClient_textDocument_definition()<CR>
+let g:LanguageClient_serverCommands = {
+    \ 'cpp': ['clangd'],
+    \ 'python': ['jedi']
+    \ }
+
+" Colorscheme
 colorscheme onedark
+set termguicolors
+syntax on
 
-set tabstop=4       " number of visual spaces per TAB
-set softtabstop=4   " number of spaces in tab when editing
-set expandtab       " tabs are spaces
+set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set fileformat=unix
 
-set number              " show line numbers
-set showcmd             " show command in bottom bar
-set cursorline          " highlight current line
-set wildmenu            " visual autocomplete for command menu
-set lazyredraw          " redraw only when we need to.
-set showmatch           " highlight matching [{()}]
-
-set incsearch           " search as characters are entered
-set hlsearch            " highlight matches
+set number
+set cursorline
+set hidden
+set nowrap
 
 " move vertically by visual line
 nnoremap j gj
 nnoremap k gk
+
+" Settings
