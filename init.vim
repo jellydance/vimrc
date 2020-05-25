@@ -15,6 +15,7 @@ Plug 'rhysd/vim-clang-format'
 Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' }
 Plug 'joshdick/onedark.vim'
 Plug 'frazrepo/vim-rainbow'
+Plug 'mileszs/ack.vim'
 call plug#end()
 
 " NERDTree
@@ -26,6 +27,8 @@ nmap <C-B> :NERDTreeToggle<CR>
 " FZF
 map <C-p> :Files<CR>
 let g:fzf_preview_window = 'right:60%'
+
+nmap <C-f> :Ag<space>
 
 " Deoplete
 let g:deoplete#enable_at_startup = 1
