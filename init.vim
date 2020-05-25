@@ -18,6 +18,12 @@ Plug 'frazrepo/vim-rainbow'
 Plug 'mileszs/ack.vim'
 call plug#end()
 
+" AirLine
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_tabs = 1
+let g:airline#extensions#tabline#show_splits = 1
+let g:airline_powerline_fonts = 1
+
 " NERDTree
 nmap <C-b> :NERDTreeToggle<CR>
 
