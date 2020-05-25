@@ -22,6 +22,7 @@ call plug#end()
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_tabs = 1
 let g:airline#extensions#tabline#show_splits = 1
+let g:airline#extensions#tabline#show_tab_nr = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
