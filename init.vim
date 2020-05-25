@@ -19,7 +19,7 @@ Plug 'mileszs/ack.vim'
 call plug#end()
 
 " NERDTree
-nmap <C-B> :NERDTreeToggle<CR>
+nmap <C-b> :NERDTreeToggle<CR>
 
 " FZF
 map <C-p> :Files<CR>
