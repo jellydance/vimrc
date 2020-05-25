@@ -39,7 +39,6 @@ let g:LanguageClient_serverCommands = {
 
 " Colorscheme
 colorscheme onedark
-set termguicolors
 syntax on
 
 set expandtab
