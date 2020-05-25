@@ -4,7 +4,6 @@ Plug 'frazrepo/vim-rainbow'
 Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
-Plug 'mileszs/ack.vim'
 Plug 'psf/black'
 Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline'
@@ -17,10 +16,7 @@ nmap <C-f> :Ag<space>
 " fzf setting
 map <C-p> :Files<CR>
 let g:fzf_preview_window = 'right:60%'
-
-if executable('ag')
-    let g:ackprg = 'ag --vimgrep'
-endif
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
 colorscheme onedark
 
