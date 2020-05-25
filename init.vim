@@ -19,9 +19,6 @@ Plug 'mileszs/ack.vim'
 call plug#end()
 
 " NERDTree
-let g:NERDTreeMinimalUI = 1
-let g:NERDTreeDirArrows = 1
-let g:NERDTreeIgnore = ['^build$']
 nmap <C-B> :NERDTreeToggle<CR>
 
 " FZF
